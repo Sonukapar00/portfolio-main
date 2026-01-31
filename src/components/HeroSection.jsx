@@ -153,7 +153,7 @@ const HeroSection = () => {
         }}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#00d4ff] rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-              <img src="https://horizons-cdn.hostinger.com/6ba94bdf-b74e-4beb-bd19-bf10249ee5ee/sonu-zIevD.jfif" alt="Saumya Singh" className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-theme-border transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]" />
+              <img src="https://horizons-cdn.hostinger.com/6ba94bdf-b74e-4beb-bd19-bf10249ee5ee/sonu-zIevD.jfif" alt="Sonu Kapar" className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-theme-border transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]" />
             </div>
           </motion.div>
 

@@ -12,19 +12,19 @@ const MediaSection = () => {
     {
       publication: "The Better India",
       title: "Tech Leader Empowering Communities",
-      quote: "Saumya Singh is breaking stereotypes and inspiring the next generation of developers through her innovative approach to education and community building.",
+      quote: "Sonu Kapar is breaking stereotypes and inspiring the next generation of developers through her innovative approach to education and community building.",
       year: "2024"
     },
     {
       publication: "Outlook India",
       title: "Rising Stars in Technology",
-      quote: "Featured among India's most influential young tech leaders, Saumya's contributions to open source and Android development are reshaping the industry.",
+      quote: "Featured among India's most influential young tech leaders, Sonu's contributions to open source and Android development are reshaping the industry.",
       year: "2023"
     },
     {
       publication: "Vogue India",
       title: "Women Changing the Tech Landscape",
-      quote: "From code to community, Saumya Singh exemplifies how passion and dedication can transform the technology ecosystem and inspire thousands.",
+      quote: "From code to community, Sonu Kapar exemplifies how passion and dedication can transform the technology ecosystem and inspire thousands.",
       year: "2023"
     }
   ];

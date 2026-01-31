@@ -27,7 +27,7 @@ const AboutSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-theme-border">
               <img
                 src="https://images.unsplash.com/photo-1688019405281-e23fb100433d"
-                alt="Saumya Singh - Professional portrait"
+                alt="Sonu Kapar - Professional portrait"
                 className="w-full h-[500px] object-cover"
               />
             </div>
