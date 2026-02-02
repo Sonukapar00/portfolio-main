@@ -133,13 +133,52 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Theme Colors - Light Mode */
+html.light {
+  --bg-color: #f8f9fa;
+  --text-color: #1a1a2e;
+  --surface-color: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(26, 26, 46, 0.2);
+}
+
+/* Theme Colors - Dark Mode */
+html.dark {
+  --bg-color: #1a1a2e;
+  --text-color: #f8f9fa;
+  --surface-color: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(212, 175, 55, 0.3);
+}
+
+@layer utilities {
+  .bg-theme-bg {
+    @apply transition-colors duration-300;
+    background-color: var(--bg-color);
+  }
+
+  .text-theme-text {
+    @apply transition-colors duration-300;
+    color: var(--text-color);
+  }
+
+  .bg-theme-surface {
+    @apply transition-colors duration-300;
+    background-color: var(--surface-color);
+  }
+
+  .border-theme-border {
+    @apply transition-colors duration-300;
+    border-color: var(--border-color);
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--navy);
+  background: var(--bg-color);
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb {
