@@ -69,7 +69,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section ref={ref} className="section-spacing bg-theme-bg py-20 transition-colors duration-300">
+    <section ref={ref} id="projects" className="section-spacing bg-theme-bg-secondary py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
