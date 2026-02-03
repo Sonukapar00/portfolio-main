@@ -63,12 +63,12 @@ const HeroSection = () => {
         duration: 0.3
       }} className="absolute top-20 left-6 z-40 bg-theme-surface backdrop-blur-xl border border-theme-border rounded-2xl p-6 min-w-[200px] shadow-2xl">
             <nav className="flex flex-col space-y-4">
-              {['Home', 'About', 'Achievements', 'Speaking', 'Tools', 'Projects', 'Contact'].map(item => {
+              {['Home', 'About', 'Achievements', 'Experiences', 'Tools', 'Projects', 'Contact'].map(item => {
                 const navMap = {
                   'Home': 'home',
                   'About': 'about',
                   'Achievements': 'achievements',
-                  'Speaking': 'speaking',
+                  'Experiences': 'speaking',
                   'Tools': 'tools',
                   'Projects': 'projects',
                   'Contact': 'contact'
