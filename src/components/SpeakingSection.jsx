@@ -49,7 +49,7 @@ const SpeakingSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-theme-text">
-            <span className="gradient-text">Internship</span> & Experiences
+            <span className="gradient-text">Experiences</span>
           </h2>
           <p className="text-theme-muted text-lg max-w-2xl mx-auto">
             Real-world experience, learning, and industry exposure
