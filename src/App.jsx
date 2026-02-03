@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import AchievementsSection from '@/components/AchievementsSection';
-import SpeakingSection from '@/components/SpeakingSection';
+import ExperiencesSection from '@/components/ExperiencesSection';
 import ToolsSkillsSection from '@/components/ToolsSkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import CommunitySection from '@/components/CommunitySection';
@@ -29,7 +29,7 @@ function App() {
         <HeroSection />
         <AboutSection />
         <AchievementsSection />
-        <SpeakingSection />
+        <ExperiencesSection />
         <ToolsSkillsSection />
         <ProjectsSection />
         <CommunitySection />
