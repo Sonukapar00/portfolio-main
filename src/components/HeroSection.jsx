@@ -63,9 +63,20 @@ const HeroSection = () => {
         duration: 0.3
       }} className="absolute top-20 left-6 z-40 bg-theme-surface backdrop-blur-xl border border-theme-border rounded-2xl p-6 min-w-[200px] shadow-2xl">
             <nav className="flex flex-col space-y-4">
-              {['Home', 'About', 'Projects', 'Contact'].map(item => <a key={item} href={`#${item.toLowerCase()}`} className="text-theme-text/80 hover:text-[#d4af37] font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
+              {['Home', 'About', 'Achievements', 'Speaking', 'Tools', 'Projects', 'Contact'].map(item => {
+                const navMap = {
+                  'Home': 'home',
+                  'About': 'about',
+                  'Achievements': 'achievements',
+                  'Speaking': 'speaking',
+                  'Tools': 'tools',
+                  'Projects': 'projects',
+                  'Contact': 'contact'
+                };
+                return <a key={item} href={`#${navMap[item]}`} className="text-theme-text/80 hover:text-[#d4af37] font-medium transition-colors" onClick={() => setIsMenuOpen(false)}>
                   {item}
-                </a>)}
+                </a>;
+              })}
             </nav>
           </motion.div>}
       </AnimatePresence>

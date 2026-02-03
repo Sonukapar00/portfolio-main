@@ -125,6 +125,7 @@ const ToolsSkillsSection = () => {
   return (
     <section
       ref={ref}
+      id="tools"
       className="section-spacing bg-theme-bg-secondary py-20"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

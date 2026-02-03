@@ -36,6 +36,7 @@ const SpeakingSection = () => {
   return (
     <section
       ref={ref}
+      id="speaking"
       className="section-spacing bg-theme-bg py-20 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
