@@ -20,7 +20,7 @@ const HeroSection = () => {
       description: "Your download will start shortly."
     });
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-theme-bg">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-theme-bg">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Professional workspace" className="w-full h-full object-cover" />

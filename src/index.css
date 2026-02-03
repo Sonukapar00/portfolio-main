@@ -12,6 +12,22 @@
   --spacing-section: 5rem;
 }
 
+/* Light theme */
+html.light {
+  --theme-bg: #f8f9fa;
+  --theme-text: #1a1a2e;
+  --theme-surface: #ffffff;
+  --theme-border: #e0e0e0;
+}
+
+/* Dark theme */
+html.dark {
+  --theme-bg: #1a1a2e;
+  --theme-text: #f8f9fa;
+  --theme-surface: #2d2d44;
+  --theme-border: #404050;
+}
+
 * {
   margin: 0;
   padding: 0;
