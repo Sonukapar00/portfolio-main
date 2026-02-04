@@ -1,22 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "50+", label: "Open Source Contributions" },
-    { value: "10K+", label: "Community Members Mentored" }
+    { value: "2+", label: "Years of Practical Experience" },
+    { value: "20+", label: "Real-World Projects" },
+    { value: "300+", label: "DSA & JavaScript Problems Solved" }
   ];
 
   return (
-    <section id="about" ref={ref} className="section-spacing bg-theme-bg py-20 transition-colors duration-300">
+    <section
+      id="about"
+      ref={ref}
+      className="section-spacing bg-theme-bg py-20 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -27,7 +30,7 @@ const AboutSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-theme-border">
               <img
                 src="https://images.unsplash.com/photo-1688019405281-e23fb100433d"
-                alt="Sonu Kapar - Professional portrait"
+                alt="Sonu Kapar - Full Stack Developer"
                 className="w-full h-[500px] object-cover"
               />
             </div>
@@ -43,22 +46,26 @@ const AboutSection = () => {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-theme-text">
               About <span className="gradient-text">Me</span>
             </h2>
-            
+
             <div className="space-y-4 text-theme-muted text-lg">
               <p>
-                With over <span className="gradient-text font-semibold">5 years of expertise</span> in Android development, 
-                I specialize in crafting elegant, scalable mobile solutions using Kotlin.
+                I’m a <span className="gradient-text font-semibold">Full-Stack Software Engineer</span> with hands-on
+                experience in building modern, responsive, and scalable web applications using React, JavaScript,
+                Node.js, and REST APIs.
               </p>
-              
+
               <p>
-                As an <span className="gradient-text font-semibold">open source contributor</span> and 
-                <span className="gradient-text font-semibold"> AI enthusiast</span>, I'm passionate about 
-                leveraging cutting-edge technologies to solve real-world problems and empower developers worldwide.
+                I’ve worked across the stack — crafting clean UI experiences on the frontend and developing efficient,
+                secure backend logic — while also leveraging
+                <span className="gradient-text font-semibold"> SQL, Power BI, and data analysis</span> to turn raw
+                data into meaningful insights.
               </p>
-              
+
               <p>
-                Beyond coding, I'm deeply committed to <span className="gradient-text font-semibold">education and community building</span>, 
-                mentoring thousands of aspiring developers and sharing knowledge through workshops, talks, and digital platforms.
+                I strongly believe in <span className="gradient-text font-semibold">consistent growth and discipline</span>.
+                From solving DSA problems daily to refining system design and communication skills, I focus on becoming a
+                better engineer every single day — not just someone who writes code, but someone who builds reliable
+                solutions.
               </p>
             </div>
 
@@ -72,11 +79,16 @@ const AboutSection = () => {
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
-                  <div className="text-sm text-theme-muted">{stat.label}</div>
+                  <div className="text-3xl font-bold gradient-text mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-theme-muted">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>
+
           </motion.div>
         </div>
       </div>
