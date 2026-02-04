@@ -57,7 +57,7 @@ const AboutSection = () => {
               <p>
                 I’ve worked across the stack — crafting clean UI experiences on the frontend and developing efficient,
                 secure backend logic — while also leveraging
-                <span className="gradient-text font-semibold"> SQL, Power BI, and data analysis</span> to turn raw
+                <span className="gradient-text font-semibold"> SQL,PostgreSQL, Power BI, and data analysis</span> to turn raw
                 data into meaningful insights.
               </p>
 
