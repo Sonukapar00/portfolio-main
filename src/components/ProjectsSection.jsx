@@ -12,51 +12,52 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "KotlinFlow Manager",
-      description: "Advanced state management library for Android using Kotlin Coroutines and Flow, enabling reactive and efficient data handling.",
-      tech: ["Kotlin", "Android", "Coroutines", "Flow"],
+      title: "Crypto Coin Tracker",
+      description: "Developed a responsive web application that displays real-time data for 100+ cryptocurrencies, including current price, market capitalization, and percentage change, enhancing user engagement and overall user experience.",
+      tech: ["React.js", "JavaScript", "HTML", "CSS", "REST API"],
       category: "Android"
     },
     {
-      title: "AI-Powered Chat App",
-      description: "Real-time messaging application with AI-driven smart replies and sentiment analysis using Kotlin and ML Kit.",
-      tech: ["Kotlin", "Firebase", "ML Kit", "Jetpack Compose"],
+      title: "Weather Predictions App",
+      description: "A responsive weather application that provides real-time weather updates for 1,00+ cities worldwide. Optimized data handling to reduce load times by 50% and designed a user-friendly interface that improved user engagement by 30%.",
+      tech: ["JavaScript", "HTML", "CSS", "Weather API"],
       category: "Android"
     },
     {
-      title: "Open Source UI Toolkit",
-      description: "Comprehensive collection of customizable Material Design components for Android developers, with 500+ GitHub stars.",
-      tech: ["Kotlin", "Material Design", "AndroidX"],
+      title: "Full-Stack Mern-ToDo-App ",
+      description: "A full-stack MERN Todo application with a decoupled frontend and backend architecture. The frontend is built with React for a fast and responsive user interface, while the backend uses Node.js and Express to provide RESTful APIs and manage data efficiently. The application supports complete CRUD operations with a scalable and maintainable code structure.",
+      tech: ["MongoDB",  "Express.js",  "React.js",  "Node.js",  "JavaScript",  "Vite",  "HTML",  "CSS"],
+
       category: "Open Source"
     },
     {
-      title: "DevHub Community Platform",
-      description: "Community-driven platform connecting developers worldwide for knowledge sharing, mentorship, and collaboration.",
-      tech: ["Kotlin", "Room", "WorkManager", "Navigation"],
-      category: "Open Source"
+      title: "Classification of chest X-ray Abnormalities",
+      description: "Built a machine learning model to classify chest X-ray abnormalities, achieving 92% accuracy and 90% precision. Applied advanced analytics for data insights and visualized results using interactive dashboards.",
+      tech: ["Python", "Machine Learning", "Data Analysis", "Power BI"],
+      category: "AI ML"
     },
     {
-      title: "Smart Task Scheduler",
-      description: "ML-powered productivity app that learns user patterns and optimizes task scheduling for maximum efficiency.",
-      tech: ["Kotlin", "TensorFlow Lite", "Room", "MVVM"],
-      category: "AI/ML"
+      title: "Super-Market-sales-dashboard",
+      description: "An interactive sales analytics dashboard built to analyze supermarket sales performance and key business metrics. The dashboard provides insights into revenue trends, regional performance, and product-level analysis, helping stakeholders make data-driven decisions and optimize business operations.",
+      tech: ["Power BI", "PostgreSQL", "Data Analysis", "Data Visualization", "Business Intelligence"],
+      category: "Data Analysis"
     },
     {
-      title: "Code Review Assistant",
-      description: "AI-driven tool that analyzes code quality, suggests improvements, and automates review processes for development teams.",
-      tech: ["Python", "NLP", "REST API", "CI/CD"],
-      category: "AI/ML"
+      title: "Music_Store_Analysis ",
+      description: "Performed comprehensive data analysis on a music store database using SQL to answer key business questions related to sales, customers, and artist performance. Designed and executed complex queries involving joins, subqueries, aggregations, and filtering to extract actionable insights for business decision-making.",
+      tech: ["PostgreSQL", "SQL", "Data Analysis", "Data Modeling"],
+      category: "Data Analysis"
     },
     {
-      title: "Fitness Tracker Pro",
-      description: "Comprehensive health and fitness tracking app with real-time analytics and personalized workout recommendations.",
-      tech: ["Kotlin", "HealthConnect", "Compose", "MPAndroidChart"],
+      title: "Coming Soon ",
+      description: "We are currently working on this project. Stay tuned for updates. It will be an innovative solution that leverages cutting-edge technologies to solve real-world problems.",
+      tech: ["Soon", "Soon", "Soon", "Soon"],
       category: "Android"
     },
     {
-      title: "Kotlin DSL Builder",
-      description: "Type-safe builder library leveraging Kotlin DSL for creating complex UI layouts with minimal boilerplate code.",
-      tech: ["Kotlin", "DSL", "Gradle", "Android"],
+      title: "Coming Soon ",
+      description: "We are currently working on this project. Stay tuned for updates. It will be an innovative solution that leverages cutting-edge technologies to solve real-world problems.",
+      tech: ["Soon", "Soon", "Soon", "Soon"],
       category: "Open Source"
     }
   ];
