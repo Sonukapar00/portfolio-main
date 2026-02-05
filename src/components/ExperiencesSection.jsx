@@ -7,29 +7,30 @@ const SpeakingSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const events = [
-    {
-      name: "COGNORISE INFOTECH",
-      topic: "The Future of AI in Mobile Development",
-      date: "March 2024",
-      description:
-        "Exploring how artificial intelligence is transforming mobile application development and user experiences.",
-      skills: ["AI", "Mobile Development", "Machine Learning", "App Architecture"]
-    },
-    {
-      name: "COGNORISE INFOTECH",
-      topic: "Empowering Women in Technology",
-      date: "November 2023",
-      description:
-        "Sharing insights on breaking barriers and creating inclusive tech communities that foster diversity and innovation.",
-      skills: ["Leadership", "Diversity & Inclusion", "Tech Communities"]
-    },
+   {
+  name: "COGNORISE INFOTECH",
+  topic: "Web Developer Internship",
+  date: "Aug 2024 – Sep 2024",
+  description:
+    "We are currently working on this project. Stay tuned for updates.",
+  skills: ["HTML", "CSS", "JavaScript", "React.js", "Bootstrap", "API Integration"]
+},
+{
+  name: "COGNORISE INFOTECH",
+  topic: "Web Developer Internship",
+  date: "Aug 2024 – Sep 2024",
+  description:
+    "Developed a currency converter web application using HTML, CSS, and JavaScript, enabling smooth conversion between multiple currencies. Improved UI flow and optimized performance, resulting in a 20% increase in application responsiveness and user satisfaction.",
+  skills: ["HTML", "CSS", "JavaScript", "UI/UX", "Web Development"]
+},
+
     {
       name: "MERISKILLS",
-      topic: "Open Source: Building Together",
+      topic: "Data Analyst: Building Together",
       date: "August 2023",
       description:
-        "Discussing the power of collaborative development and how open source communities shape the future of technology.",
-      skills: ["Open Source", "GitHub", "Collaboration", "Community Building"]
+        "We are currently working on this project. Stay tuned for updates.",
+      skills: ["Soon", "Soon", "Soon", "Soon"]
     }
   ];
 
