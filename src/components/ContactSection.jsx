@@ -50,47 +50,68 @@ const ContactSection = () => {
       return;
     }
 
-    // Check if EmailJS is configured
-    if (!import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
-      toast({
-        title: "Configuration Missing",
-        description: "Email service is not configured. Please contact the site owner.",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setIsLoading(true);
 
     try {
-      const response = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: email
-        }
-      );
+      // Try to send via EmailJS if configured
+      if (import.meta.env.VITE_EMAILJS_PUBLIC_KEY && import.meta.env.VITE_EMAILJS_SERVICE_ID && import.meta.env.VITE_EMAILJS_TEMPLATE_ID) {
+        const response = await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+            to_email: email
+          }
+        );
 
-      if (response.status === 200) {
+        if (response.status === 200) {
+          toast({
+            title: "Message Sent! ✨",
+            description: "Thanks for reaching out. I'll get back to you soon!"
+          });
+          setFormData({
+            name: '',
+            email: '',
+            message: ''
+          });
+          setIsLoading(false);
+          return;
+        }
+      } else {
+        // Fallback: Open mailto if EmailJS is not configured
+        const mailtoLink = `mailto:${email}?subject=Portfolio Contact from ${formData.name}&body=Name: ${formData.name}%0AEmail: ${formData.email}%0A%0AMessage:%0A${formData.message}`;
+        window.open(mailtoLink);
+        
         toast({
-          title: "Message Sent! ✨",
-          description: "Thanks for reaching out. I'll get back to you soon!"
+          title: "Opening Email Client...",
+          description: "Your email client will open. Please send the email from there."
         });
         setFormData({
           name: '',
           email: '',
           message: ''
         });
+        setIsLoading(false);
+        return;
       }
     } catch (error) {
       console.error("Email error:", error);
+      
+      // Fallback on error: use mailto
+      const mailtoLink = `mailto:${email}?subject=Portfolio Contact from ${formData.name}&body=Name: ${formData.name}%0AEmail: ${formData.email}%0A%0AMessage:%0A${formData.message}`;
+      
       toast({
-        title: "Failed to Send",
-        description: "There was an error sending your message. Please try again.",
-        variant: "destructive"
+        title: "Using Fallback Email",
+        description: "Your email client will open. Please send the email from there."
+      });
+      window.open(mailtoLink);
+      
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
       });
     } finally {
       setIsLoading(false);
