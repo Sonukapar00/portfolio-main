@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Send, Copy, Check } from 'lucide-react';
+import { Mail, Send, Copy, Check, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,6 +20,13 @@ const ContactSection = () => {
   });
 
   const email = "sonu.ic19@nsut.ac.in";
+
+  // Initialize EmailJS
+  useEffect(() => {
+    if (import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    }
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -29,7 +38,7 @@ const ContactSection = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.message) {
@@ -41,10 +50,51 @@ const ContactSection = () => {
       return;
     }
 
-    toast({
-      title: "🚧 Feature Not Implemented",
-      description: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
+    // Check if EmailJS is configured
+    if (!import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+      toast({
+        title: "Configuration Missing",
+        description: "Email service is not configured. Please contact the site owner.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: email
+        }
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Message Sent! ✨",
+          description: "Thanks for reaching out. I'll get back to you soon!"
+        });
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error("Email error:", error);
+      toast({
+        title: "Failed to Send",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -159,10 +209,20 @@ const ContactSection = () => {
 
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-[#d4af37] to-[#00d4ff] hover:from-[#d4af37]/90 hover:to-[#00d4ff]/90 text-[#1a1a2e] font-bold py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
+            disabled={isLoading}
+            className="w-full bg-gradient-to-r from-[#d4af37] to-[#00d4ff] hover:from-[#d4af37]/90 hover:to-[#00d4ff]/90 text-[#1a1a2e] font-bold py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Send className="w-5 h-5 mr-2" />
-            Send Message
+            {isLoading ? (
+              <>
+                <div className="w-4 h-4 mr-2 border-2 border-[#1a1a2e]/30 border-t-[#1a1a2e] rounded-full animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                <Send className="w-5 h-5 mr-2" />
+                Send Message
+              </>
+            )}
           </Button>
         </motion.form>
       </div>
