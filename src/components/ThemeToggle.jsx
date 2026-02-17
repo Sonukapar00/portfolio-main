@@ -14,7 +14,7 @@ const ThemeToggle = () => {
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.1, rotate: 15 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed top-6 right-6 z-50 p-3 rounded-full bg-theme-surface text-theme-text border border-theme-border shadow-lg hover:shadow-2xl transition-colors duration-300"
+      className="fixed bottom-6 left-6 z-50 p-3 rounded-full bg-theme-surface text-theme-text border border-theme-border shadow-lg hover:shadow-2xl transition-colors duration-300"
       aria-label="Toggle Theme"
     >
       <motion.div
