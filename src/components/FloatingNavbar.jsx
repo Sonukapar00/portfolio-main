@@ -53,12 +53,12 @@ const FloatingNavbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ${
           scrolled ? "top-4" : "top-8"
         }`}
       >
         <div
-          className={`px-6 py-3 rounded-full backdrop-blur-xl border border-theme-border shadow-2xl transition-all duration-300 ${
+          className={`w-full max-w-[1000px] px-4 py-3 rounded-full backdrop-blur-xl border border-theme-border shadow-2xl transition-all duration-300 ${
             scrolled
               ? "bg-theme-surface/90 shadow-[0_0_30px_rgba(212,175,55,0.3)]"
               : "bg-theme-surface/80"
