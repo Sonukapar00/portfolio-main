@@ -12,6 +12,7 @@ import ContactSection from '@/components/ContactSection';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/ThemeContext';
 import ThemeToggle from '@/components/ThemeToggle';
+import FloatingNavbar from '@/components/FloatingNavbar';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       </Helmet>
       
       <div className="min-h-screen bg-theme-bg text-theme-text transition-colors duration-300">
+        <FloatingNavbar />
         <ThemeToggle />
         <HeroSection />
         <AboutSection />
