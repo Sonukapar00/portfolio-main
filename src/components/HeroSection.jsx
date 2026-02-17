@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, Download } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { useTheme } from "./ThemeContext";
+import TypedText from "./TypedText";
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -116,7 +117,9 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-theme-text"
             >
-              <span className="gradient-text">Sonu Kapar</span>
+              <span className="gradient-text">
+                <TypedText text="Sonu Kapar" speed={80} startDelay={300} />
+              </span>
             </motion.h1>
 
             <motion.p
@@ -125,7 +128,11 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl sm:text-2xl lg:text-3xl text-theme-text mb-6 font-semibold"
             >
-              Software Engineer | Educator | Tech Influencer
+              <TypedText 
+                text="Software Engineer | Educator | Tech Influencer" 
+                speed={50} 
+                startDelay={800}
+              />
             </motion.p>
 
             {/* Download CV */}
@@ -145,7 +152,11 @@ const HeroSection = () => {
             </motion.div>
 
             <p className="text-lg text-theme-text/80">
-              Building the future through code, community, and innovation
+              <TypedText 
+                text="Building the future through code, community, and innovation" 
+                speed={40} 
+                startDelay={1500}
+              />
             </p>
           </div>
 
@@ -155,11 +166,12 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 flex justify-center"
+            whileHover={{ scale: 1.05 }}
           >
             <img
               src="https://horizons-cdn.hostinger.com/6ba94bdf-b74e-4beb-bd19-bf10249ee5ee/sonu-zIevD.jfif"
               alt="Sonu Kapar"
-              className="w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-theme-border"
+              className="w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-theme-border transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] cursor-pointer"
             />
           </motion.div>
         </div>
