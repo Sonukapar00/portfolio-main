@@ -218,18 +218,21 @@ const ContactSection = () => {
             {socialLinks.map((social, index) => {
               const IconComponent = social.icon;
               return (
-                <motion.a
+                <motion.div
                   key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`flex items-center justify-center w-12 h-12 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] transition-all ${social.color}`}
-                  title={social.name}
                 >
-                  <IconComponent className="w-5 h-5" />
-                </motion.a>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-center w-12 h-12 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] transition-all ${social.color}`}
+                    title={social.name}
+                  >
+                    <IconComponent className="w-5 h-5" />
+                  </a>
+                </motion.div>
               );
             })}
           </div>
