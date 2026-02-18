@@ -7,18 +7,55 @@ const SocialLinksSection = () => {
   const { toast } = useToast();
 
   const socials = [
-    { icon: Linkedin, name: "LinkedIn", color: "#0077B5" },
-    { icon: Twitter, name: "Twitter", color: "#1DA1F2" },
-    { icon: Github, name: "GitHub", color: "#333" },
-    { icon: Instagram, name: "Instagram", color: "#E4405F" },
-    { icon: Mail, name: "Email", color: "#EA4335" }
+    { 
+      icon: Linkedin, 
+      name: "LinkedIn", 
+      color: "#0077B5",
+      url: "https://www.linkedin.com/in/sonu-848019200/"
+    },
+    { 
+      icon: Twitter, 
+      name: "Twitter", 
+      color: "#1DA1F2",
+      url: "https://x.com/SonuTym"
+    },
+    { 
+      icon: Github, 
+      name: "GitHub", 
+      color: "#333",
+      url: "https://github.com/Sonukapar00"
+    },
+    { 
+      icon: Instagram, 
+      name: "Instagram", 
+      color: "#E4405F",
+      url: "https://www.instagram.com/sonuk.apar?igsh=MWxhOHY0ajV4NjZ0Yw=="
+    },
+    { 
+      icon: Mail, 
+      name: "Email", 
+      color: "#EA4335",
+      url: "mailto:sonukapar72102@gmail.com"
+    }
   ];
 
-  const handleSocialClick = (name) => {
-    toast({
-      title: "🚧 Feature Not Implemented",
-      description: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
+  const handleSocialClick = (url, name) => {
+    if (!url) {
+      toast({
+        title: "⚠️ Link Not Available",
+        description: `The ${name} link is not available yet.`,
+      });
+      return;
+    }
+
+    try {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (err) {
+      toast({
+        title: "❌ Could Not Open Link",
+        description: "An error occurred while opening the link.",
+      });
+    }
   };
 
   return (
@@ -47,7 +84,7 @@ const SocialLinksSection = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.15, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handleSocialClick(social.name)}
+                onClick={() => handleSocialClick(social.url, social.name)}
                 className="glass-effect p-4 rounded-xl hover:shadow-lg transition-all group"
                 aria-label={social.name}
               >
