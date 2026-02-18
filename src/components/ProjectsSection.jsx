@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       description: "A responsive weather application that provides real-time weather updates for 1,00+ cities worldwide. Optimized data handling to reduce load times by 50% and designed a user-friendly interface that improved user engagement by 30%.",
       tech: ["JavaScript", "HTML", "CSS", "Weather API"],
       category: "Android",
-      github: "https://github.com/your-username/weather-app",
+      github: "https://github.com/Sonukapar00/Weather-app-main",
       demo: "https://your-weather-demo-link.com"
     },
     {
@@ -32,7 +32,7 @@ const ProjectsSection = () => {
       description: "A full-stack MERN Todo application with a decoupled frontend and backend architecture. The frontend is built with React for a fast and responsive user interface, while the backend uses Node.js and Express to provide RESTful APIs and manage data efficiently. The application supports complete CRUD operations with a scalable and maintainable code structure.",
       tech: ["MongoDB",  "Express.js",  "React.js",  "Node.js",  "JavaScript",  "Vite",  "HTML",  "CSS"],
       category: "Open Source",
-      github: "https://github.com/your-username/mern-todo-app",
+      github: "https://github.com/Sonukapar00/mern-todo-app",
       demo: "https://your-todo-app-demo.com"
     },
     {
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
       description: "An interactive sales analytics dashboard built to analyze supermarket sales performance and key business metrics. The dashboard provides insights into revenue trends, regional performance, and product-level analysis, helping stakeholders make data-driven decisions and optimize business operations.",
       tech: ["Power BI", "PostgreSQL", "Data Analysis", "Data Visualization", "Business Intelligence"],
       category: "Data Analysis",
-      github: "https://github.com/your-username/supermarket-dashboard",
+      github: "https://github.com/Sonukapar00/Super-Market-sales-dashboard",
       demo: "https://your-dashboard-demo.com"
     },
     {
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
       description: "Performed comprehensive data analysis on a music store database using SQL to answer key business questions related to sales, customers, and artist performance. Designed and executed complex queries involving joins, subqueries, aggregations, and filtering to extract actionable insights for business decision-making.",
       tech: ["PostgreSQL", "SQL", "Data Analysis", "Data Modeling"],
       category: "Data Analysis",
-      github: "https://github.com/your-username/music-store-analysis",
+      github: "https://github.com/Sonukapar00/Music_Store_Analysis",
       demo: "https://your-analysis-demo.com"
     },
     {
