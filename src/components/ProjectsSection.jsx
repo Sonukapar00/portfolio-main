@@ -15,38 +15,49 @@ const ProjectsSection = () => {
       title: "Crypto Coin Tracker",
       description: "Developed a responsive web application that displays real-time data for 100+ cryptocurrencies, including current price, market capitalization, and percentage change, enhancing user engagement and overall user experience.",
       tech: ["React.js", "JavaScript", "HTML", "CSS", "REST API"],
-      category: "Android"
+      category: "Android",
+      github: "https://github.com/Sonukapar00/Crypto_Price_Tracker-main",
+      demo: "https://your-demo-link-here.com" // Add your live demo link
     },
     {
       title: "Weather Predictions App",
       description: "A responsive weather application that provides real-time weather updates for 1,00+ cities worldwide. Optimized data handling to reduce load times by 50% and designed a user-friendly interface that improved user engagement by 30%.",
       tech: ["JavaScript", "HTML", "CSS", "Weather API"],
-      category: "Android"
+      category: "Android",
+      github: "https://github.com/your-username/weather-app",
+      demo: "https://your-weather-demo-link.com"
     },
     {
       title: "Full-Stack Mern-ToDo-App ",
       description: "A full-stack MERN Todo application with a decoupled frontend and backend architecture. The frontend is built with React for a fast and responsive user interface, while the backend uses Node.js and Express to provide RESTful APIs and manage data efficiently. The application supports complete CRUD operations with a scalable and maintainable code structure.",
       tech: ["MongoDB",  "Express.js",  "React.js",  "Node.js",  "JavaScript",  "Vite",  "HTML",  "CSS"],
-
-      category: "Open Source"
+      category: "Open Source",
+      github: "https://github.com/your-username/mern-todo-app",
+      demo: "https://your-todo-app-demo.com"
     },
     {
       title: "Classification of chest X-ray Abnormalities",
       description: "Built a machine learning model to classify chest X-ray abnormalities, achieving 92% accuracy and 90% precision. Applied advanced analytics for data insights and visualized results using interactive dashboards.",
       tech: ["Python", "Machine Learning", "Data Analysis", "Power BI"],
-      category: "AI ML"
+      category: "AI ML",
+      github: "https://github.com/your-username/xray-classification",
+      demo: "https://your-xray-demo-link.com"
     },
     {
       title: "Super-Market-sales-dashboard",
       description: "An interactive sales analytics dashboard built to analyze supermarket sales performance and key business metrics. The dashboard provides insights into revenue trends, regional performance, and product-level analysis, helping stakeholders make data-driven decisions and optimize business operations.",
       tech: ["Power BI", "PostgreSQL", "Data Analysis", "Data Visualization", "Business Intelligence"],
-      category: "Data Analysis"
+      category: "Data Analysis",
+      github: "https://github.com/your-username/supermarket-dashboard",
+      demo: "https://your-dashboard-demo.com"
     },
     {
       title: "Music_Store_Analysis ",
       description: "Performed comprehensive data analysis on a music store database using SQL to answer key business questions related to sales, customers, and artist performance. Designed and executed complex queries involving joins, subqueries, aggregations, and filtering to extract actionable insights for business decision-making.",
       tech: ["PostgreSQL", "SQL", "Data Analysis", "Data Modeling"],
-      category: "Data Analysis"
+      category: "Data Analysis",
+      github: "https://github.com/your-username/music-store-analysis",
+      demo: "https://your-analysis-demo.com"
     },
     {
       title: "Coming Soon ",
@@ -62,11 +73,24 @@ const ProjectsSection = () => {
     }
   ];
 
-  const handleLinkClick = (type) => {
-    toast({
-      title: "🚧 Feature Not Implemented",
-      description: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
+  const handleLinkClick = (project, type) => {
+    const url = project?.[type];
+    if (!url) {
+      toast({
+        title: "⚠️ Link Not Available",
+        description: "The requested link is not available for this project.",
+      });
+      return;
+    }
+
+    try {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (err) {
+      toast({
+        title: "❌ Could Not Open Link",
+        description: "An error occurred while opening the link.",
+      });
+    }
   };
 
   return (
@@ -135,14 +159,14 @@ const ProjectsSection = () => {
                 {/* Links */}
                 <div className="flex gap-3">
                   <button
-                    onClick={() => handleLinkClick('github')}
+                    onClick={() => handleLinkClick(project, 'github')}
                     className="flex items-center gap-2 px-4 py-2 bg-[#d4af37]/10 hover:bg-[#d4af37]/20 text-[#d4af37] rounded-lg text-sm font-medium transition-colors"
                   >
                     <Github className="w-4 h-4" />
                     <span>Code</span>
                   </button>
                   <button
-                    onClick={() => handleLinkClick('demo')}
+                    onClick={() => handleLinkClick(project, 'demo')}
                     className="flex items-center gap-2 px-4 py-2 bg-[#00d4ff]/10 hover:bg-[#00d4ff]/20 text-[#00d4ff] rounded-lg text-sm font-medium transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
