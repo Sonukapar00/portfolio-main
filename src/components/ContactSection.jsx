@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Send, Copy, Check, AlertCircle } from 'lucide-react';
+import { Mail, Send, Copy, Check, AlertCircle, Linkedin, Instagram, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import emailjs from 'emailjs-com';
@@ -20,6 +20,39 @@ const ContactSection = () => {
   });
 
   const email = "sonu.ic19@nsut.ac.in";
+
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/sonu-848019200/",
+      icon: Linkedin,
+      color: "hover:text-[#0077B5]"
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/Sonukapar00",
+      icon: Github,
+      color: "hover:text-[#fff]"
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/sonuk.apar?igsh=MWxhOHY0ajV4NjZ0Yw==",
+      icon: Instagram,
+      color: "hover:text-[#E4405F]"
+    },
+    {
+      name: "Twitter",
+      url: "https://x.com/SonuTym",
+      icon: Mail, // Using Mail as placeholder, can be updated with Twitter icon
+      color: "hover:text-[#1DA1F2]"
+    },
+    {
+      name: "Email",
+      url: "mailto:sonukapar72102@gmail.com",
+      icon: Mail,
+      color: "hover:text-[#d4af37]"
+    }
+  ];
 
   // Initialize EmailJS
   useEffect(() => {
@@ -171,6 +204,35 @@ const ContactSection = () => {
               </>
             )}
           </Button>
+        </motion.div>
+
+        {/* Social Media Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="glass-effect rounded-2xl p-8 mb-8"
+        >
+          <h3 className="text-xl font-bold text-theme-text mb-6 text-center">Connect With Me</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {socialLinks.map((social, index) => {
+              const IconComponent = social.icon;
+              return (
+                <motion.a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`flex items-center justify-center w-12 h-12 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] transition-all ${social.color}`}
+                  title={social.name}
+                >
+                  <IconComponent className="w-5 h-5" />
+                </motion.a>
+              );
+            })}
+          </div>
         </motion.div>
 
         {/* Contact Form */}
