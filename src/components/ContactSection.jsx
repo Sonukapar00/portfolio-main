@@ -227,7 +227,7 @@ const ContactSection = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center justify-center w-12 h-12 bg-[#00d4ff]/10 border border-[#00d4ff]/30 rounded-xl text-[#00d4ff] transition-all ${social.color}`}
+                    className={`social-icon flex items-center justify-center w-12 h-12 rounded-xl transition-all ${social.color}`}
                     title={social.name}
                   >
                     <IconComponent className="w-5 h-5" />

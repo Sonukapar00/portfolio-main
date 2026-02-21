@@ -15,7 +15,9 @@
 /* Light theme */
 html.light {
   --theme-bg: #f8f9fa;
+  --theme-bg-secondary: #e8ecf1;
   --theme-text: #1a1a2e;
+  --theme-text-muted: #666666;
   --theme-surface: #ffffff;
   --theme-border: #e0e0e0;
 }
@@ -23,7 +25,9 @@ html.light {
 /* Dark theme */
 html.dark {
   --theme-bg: #1a1a2e;
+  --theme-bg-secondary: #0f1724;
   --theme-text: #f8f9fa;
+  --theme-text-muted: #a0a0a0;
   --theme-surface: #2d2d44;
   --theme-border: #404050;
 }
@@ -40,11 +44,12 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--navy);
-  color: var(--white);
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
   line-height: 1.6;
   letter-spacing: 0.01em;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,10 +68,36 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .glass-effect {
-    background: rgba(255, 255, 255, 0.05);
+    @apply transition-colors duration-300;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+  }
+
+  html.light .glass-effect {
+    background: rgba(100, 100, 120, 0.12);
+    border: 1px solid rgba(26, 26, 46, 0.2);
+    box-shadow: 0 4px 15px rgba(26, 26, 46, 0.15);
+  }
+
+  html.dark .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .social-icon {
+    @apply transition-all duration-300;
+  }
+
+  html.light .social-icon {
+    background: rgba(26, 26, 46, 0.1);
+    border: 1.5px solid rgba(26, 26, 46, 0.25);
+    color: #1a1a2e;
+  }
+
+  html.dark .social-icon {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
   }
 
   .section-spacing {
@@ -149,41 +180,35 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Theme Colors - Light Mode */
-html.light {
-  --bg-color: #f8f9fa;
-  --text-color: #1a1a2e;
-  --surface-color: rgba(255, 255, 255, 0.9);
-  --border-color: rgba(26, 26, 46, 0.2);
-}
-
-/* Theme Colors - Dark Mode */
-html.dark {
-  --bg-color: #1a1a2e;
-  --text-color: #f8f9fa;
-  --surface-color: rgba(0, 0, 0, 0.3);
-  --border-color: rgba(212, 175, 55, 0.3);
-}
-
 @layer utilities {
   .bg-theme-bg {
     @apply transition-colors duration-300;
-    background-color: var(--bg-color);
+    background-color: var(--theme-bg);
+  }
+
+  .bg-theme-bg-secondary {
+    @apply transition-colors duration-300;
+    background-color: var(--theme-bg-secondary);
   }
 
   .text-theme-text {
     @apply transition-colors duration-300;
-    color: var(--text-color);
+    color: var(--theme-text);
+  }
+
+  .text-theme-muted {
+    @apply transition-colors duration-300;
+    color: var(--theme-text-muted);
   }
 
   .bg-theme-surface {
     @apply transition-colors duration-300;
-    background-color: var(--surface-color);
+    background-color: var(--theme-surface);
   }
 
   .border-theme-border {
     @apply transition-colors duration-300;
-    border-color: var(--border-color);
+    border-color: var(--theme-border);
   }
 }
 
@@ -193,7 +218,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-color);
+  background: var(--theme-bg);
   transition: background-color 0.3s ease;
 }
 

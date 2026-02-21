@@ -39,10 +39,10 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         />
         <div
-          className={`absolute inset-0 transition-colors duration-500 ${
+          className={`absolute inset-0 transition-colors duration-500 pointer-events-none ${
             theme === "dark"
-              ? "bg-gradient-to-br from-[#1a1a2e]/95 via-[#1a1a2e]/85 to-[#00d4ff]/20"
-              : "bg-gradient-to-br from-white/90 via-white/80 to-[#d4af37]/20"
+              ? "bg-gradient-to-br from-[#0f1724]/80 via-[#11121a]/50 to-[#001f2b]/10"
+              : "bg-gradient-to-br from-white/10 via-white/6 to-transparent"
           }`}
         ></div>
       </div>

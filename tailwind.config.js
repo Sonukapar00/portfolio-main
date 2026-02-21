@@ -18,7 +18,10 @@ module.exports = {
 		extend: {
 			colors: {
 				'theme-bg': 'var(--theme-bg)',
+				'theme-bg-secondary': 'var(--theme-bg-secondary)',
 				'theme-text': 'var(--theme-text)',
+				'theme-text-muted': 'var(--theme-text-muted)',
+				'theme-muted': 'var(--theme-text-muted)',
 				'theme-surface': 'var(--theme-surface)',
 				'theme-border': 'var(--theme-border)',
 				border: 'hsl(var(--border))',
