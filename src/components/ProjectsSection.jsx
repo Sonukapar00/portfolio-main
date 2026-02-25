@@ -149,7 +149,7 @@ const ProjectsSection = () => {
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-[#00d4ff]/10 text-[#00d4ff] text-xs rounded-full border border-[#00d4ff]/30"
+                      className="tech-tag"
                     >
                       {tech}
                     </span>

@@ -109,9 +109,9 @@ const SpeakingSection = () => {
                         <span
                           key={i}
                           className="px-3 py-1 text-sm rounded-full
-                          bg-[#00d4ff]/10 text-[#00d4ff]
-                          border border-[#00d4ff]/30
-                          hover:bg-[#00d4ff]/20 transition-colors"
+                          bg-gray-200/70 dark:bg-gray-600/40 text-gray-700 dark:text-gray-300
+                          border border-gray-400/50 dark:border-gray-500/50
+                          hover:bg-gray-300/70 dark:hover:bg-gray-600/60 transition-colors"
                         >
                           {skill}
                         </span>

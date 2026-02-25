@@ -100,6 +100,22 @@ h1, h2, h3, h4, h5, h6 {
     color: #00d4ff;
   }
 
+  .tech-tag {
+    @apply transition-all duration-300 text-xs rounded-full border px-3 py-1;
+  }
+
+  html.light .tech-tag {
+    background: rgba(26, 26, 46, 0.1);
+    border-color: rgba(26, 26, 46, 0.3);
+    color: #1a1a2e;
+  }
+
+  html.dark .tech-tag {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+  }
+
   .section-spacing {
     padding-top: var(--spacing-section);
     padding-bottom: var(--spacing-section);
